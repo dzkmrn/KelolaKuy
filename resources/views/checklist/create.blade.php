@@ -39,7 +39,11 @@
                     </div>
                     <div class="form-group">
                         <label for="kondisi">Kondisi</label>
-                        <input type="kondisi" class="form-control" required="required" name="kondisi" id="kondisi" aria-describedby="kondisi">
+                        <select name="kondisi" class="form-control form-select-sm" id="kondisi" aria-describedby="kondisi">
+                            <option value="Normal">Normal</option> 
+                            <option value="Rusak">Rusak</option>
+                            <option value="Hilang">Hilang</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

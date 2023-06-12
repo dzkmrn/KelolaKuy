@@ -41,7 +41,11 @@
                     </div>
                     <div class="form-group">
                         <label for="kondisi">kondisi</label>
-                        <input type="kondisi" name="kondisi" class="form-control" id="kondisi" value="{{ $checklist->kondisi }}" ariadescribedby="kondisi">
+                        <select name="kondisi" class="form-control form-select-sm" id="kondisi" aria-describedby="kondisi">
+                            <option value="Normal">Normal</option> 
+                            <option value="Rusak">Rusak</option>
+                            <option value="Hilang">Hilang</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
