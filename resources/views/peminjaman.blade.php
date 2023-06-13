@@ -5,6 +5,7 @@
 @extends('layout.main')
 
 @section('isi')
+<!-- UPDATE - PEMINJAMAN BLADE -->
 <!-- <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="float-right my-2">
