@@ -64,6 +64,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // UPDATE - REGISTER PAGE
         return User::create([
             'username'=>$data['username'],
             'name' => $data['name'],
