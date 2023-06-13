@@ -5,13 +5,13 @@
 @extends('layout.main')
 
 @section('isi')
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="float-right my-2">
             <a class="btn btn-success" href="{{ route('peminjaman.create') }}"> Input Peminjaman</a>
         </div>
     </div>
-</div>
+</div> -->
 
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
