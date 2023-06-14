@@ -50,7 +50,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 });
 
 Route::resource('kategori', KategoriController::class);
+Route::get('/searchKategori', [KategoriController::class, 'search'])->name('searchKategori');
+
 Route::resource('jenis', JenisController::class);
+Route::get('/searchJenis', [JenisController::class, 'search'])->name('searchJenis');
+
 Route::resource('peminjam', PeminjamController::class);
 Route::get('/search', [PeminjamController::class, 'search'])->name('search');
 

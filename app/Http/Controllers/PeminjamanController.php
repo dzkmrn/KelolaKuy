@@ -186,5 +186,5 @@ class PeminjamanController extends Controller
     {
         Peminjaman::find($id_peminjaman)->delete();
         return redirect()->route('peminjaman.index')->with('success', 'peminjaman Berhasil Dihapus');
-    }
+    } 
 }

@@ -95,15 +95,24 @@ class KategoriController extends Controller
         $kategori->kategori_alat = $request->kategori_alat;
         $kategori->dekskripsi_kategori = $request->dekskripsi_kategori;
 
-        if ($kategori->foto && file_exists(storage_path('app/public/' .$kategori->foto))) {
-            Storage::delete('public/' .$kategori->foto);
+        // Update Foto gak jadi required & existing foto bakal ada
+        if ($request->hasFile('foto')) {
+            if ($kategori->foto && file_exists(storage_path('app/public/' . $kategori->foto))) {
+                Storage::delete('public/' . $kategori->foto);
+            }
+            
+            $foto = $request->file('foto')->store('images', 'public');
+            $kategori->foto = $foto;
         }
-
-        $foto = $request->file('foto')->store('images', 'public');
-        $kategori->foto = $foto;
-
+        
+        // Update the other fields
+        $kategori->fill($request->except('foto'));
+        
+        // Save the updated record
         $kategori->save();
+        
         return redirect()->route('kategori.index')->with('success', 'Kategori Berhasil Diupdate');
+        
     }
 
     /**
@@ -116,5 +125,12 @@ class KategoriController extends Controller
     {
         Kategori::find($id_kategori)->delete();
         return redirect()->route('kategori.index')->with('success', 'Kategori Berhasil Dihapus');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $kategori = Kategori::where('kategori_alat', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('kategori', compact('kategori'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 }

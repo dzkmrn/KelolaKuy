@@ -44,9 +44,10 @@
                         <input type="text" name="nama_alat" class="form-control" id="nama_alat" value="{{ $alat->nama_alat }}" ariadescribedby="nama_alat">
                         <input type="hidden" name="id_alat" class="form-control" id="id_alat" value="{{ $alat->id_alat }}" ariadescribedby="id_alat">
                     </div>
+                    <!-- UPDATE - cuman update require ke not required -->
                     <div class="form-group">
                         <label for="foto_alat">Gambar</label>
-                        <input type="file" class="form-control" required="required" name="foto_alat" value="{{$alat->foto_alat}}"></br>
+                        <input type="file" class="form-control" name="foto_alat" value="{{$alat->foto_alat}}"></br>
                         <img width="150px" src="{{asset('storage/'.$alat->foto_alat)}}">
                     </div>
                     <div class="form-group">

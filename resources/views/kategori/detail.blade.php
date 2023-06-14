@@ -11,7 +11,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>ID Kategori: </b>{{$kategori->id_kategori}}</li>
                     <li class="list-group-item"><b>Kategori: </b>{{$kategori->kategori_alat}}</li>
-                    <li class="list-group-item"><img width="100px" src="{{asset('storage/'.$kategori->foto)}}"></li>
+                    <li class="list-group-item"><b>Foto Alat: </b><br><img width="100px" src="{{asset('storage/'.$kategori->foto)}}"></li>
                     <li class="list-group-item"><b>Deskripsi Kategori: </b>{{$kategori->dekskripsi_kategori}}</li>
                 </ul>
             </div>

@@ -15,7 +15,7 @@
                     <li class="list-group-item"><b>Nama Alat: </b>{{$alat->nama_alat}}</li>
                     <li class="list-group-item"><b>Foto Alat: </b><br><img width="100px" src="{{asset('storage/'.$alat->foto_alat)}}"></li>
                     <li class="list-group-item"><b>Merk Alat: </b>{{$alat->merk_alat}}</li>
-                    <li class="list-group-item"><b>Kondisi Alat: </b>{{$alat->Kondisi_alat}}</li>
+                    <li class="list-group-item"><b>Kondisi Alat: </b>{{$alat->kondisi_alat}}</li>
                 </ul>
             </div>
             <a class="btn btn-success mt3" href="{{ url('alat') }}">Kembali</a>

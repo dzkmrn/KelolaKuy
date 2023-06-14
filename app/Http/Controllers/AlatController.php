@@ -127,12 +127,22 @@ class AlatController extends Controller
         ]);
 
         // fungsi eloquent untuk nambah data Alat
-        $alat = Alat::with(['kategori','jenis'])->where('id_alat',$id_alat)->first();
 
-        if ($alat->foto_alat && file_exists(storage_path('app/public/' .$alat->foto_alat))) {
-            Storage::delete('public/' .$alat->foto_alat);
+        $alat = Alat::with(['kategori','jenis'])->where('id_alat', $id_alat)->first();
+
+        if ($request->hasFile('foto_alat')) {
+            // A new file is being uploaded, so delete the previous photo (if exists)
+            if ($alat->foto_alat && Storage::exists('public/' . $alat->foto_alat)) {
+                Storage::delete('public/' . $alat->foto_alat);
+            }
+
+            $foto_alat = $request->file('foto_alat')->store('images', 'public');
+            // Update the file path in your database or storage location
+            $alat->foto_alat = $foto_alat;
+        } else {
+            // No new file is being uploaded, so keep the previous photo as it is
+            $foto_alat = $alat->foto_alat;
         }
-        $foto_alat = $request->file('foto_alat')->store('images', 'public');
 
         $alat -> id_alat = $request->get('id_alat');
         $alat -> nama_alat = $request->get('nama_alat');
@@ -150,7 +160,7 @@ class AlatController extends Controller
         $alat->jenis()->associate($jenis);
         $alat->save();
 
-        return redirect()->route('alat.index')->with('success', 'alat Berhasil Diupdate');
+        return redirect()->route('alat.index')->with('success', 'Alat Berhasil Diupdate');
     }
 
     /**

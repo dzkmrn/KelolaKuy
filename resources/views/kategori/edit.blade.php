@@ -28,11 +28,20 @@
                         <input type="hidden" name="id_kategori" class="form-control" id="id_kategori" value="{{ $kategori->id_kategori }}" ariadescribedby="id_kategori">
                         <input type="text" name="kategori_alat" class="form-control" id="kategori_alat" value="{{ $kategori->kategori_alat }}" ariadescribedby="id_kategori">
                     </div>
+
+                    <!-- Update Blade Edit kategori jadi non required & ada existing foto -->
+
                     <div class="form-group">
                         <label for="foto">Gambar</label>
-                        <input type="file" class="form-control" required="required" name="foto" value="{{$kategori->foto}}"></br>
-                        <img width="150px" src="{{asset('storage/'.$kategori->foto)}}">
+                        <!-- Update from required to non-required -->
+                        <input type="file" class="form-control" name="foto">
+                        <br>
+                        @if ($kategori->foto)
+                            <img width="150px" src="{{asset('storage/'.$kategori->foto)}}">
+                            <input type="hidden" name="existing_foto" value="{{$kategori->foto}}">
+                        @endif
                     </div>
+
                     <div class="form-group">
                         <label for="dekskripsi_kategori">Deskripsi Kategori</label><br>
                         <input type="text" name="dekskripsi_kategori" class="form-control" id="dekskripsi_kategori" value="{{ $kategori->dekskripsi_kategori }}" aria-describedby="dekskripsi_kategori">

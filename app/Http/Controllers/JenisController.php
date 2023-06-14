@@ -100,4 +100,12 @@ class JenisController extends Controller
         Jenis::find($id_jenis)->delete();
         return redirect()->route('jenis.index')->with('success', 'jenis Berhasil Dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $jenis = Jenis::where('jenis_alat', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('jenis', compact('jenis'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
+
