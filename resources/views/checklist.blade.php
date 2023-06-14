@@ -28,7 +28,7 @@
         <th>Tanggal Peminjaman</th>
         <th>Tanggal Pengembalian</th>
         <th>Kondisi</th>
-        <th width="280px">Action</th>
+        <th width="140px">Action</th>
     </tr>
     @foreach ($checklist as $ch)
     <tr>
@@ -43,9 +43,7 @@
 
                 <a class="btn btn-info" href="{{ route('checklist.show',$ch->id_checklist) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('checklist.edit',$ch->id_checklist) }}">Edit</a>
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                @csrf     
             </form>
         </td>
     </tr>

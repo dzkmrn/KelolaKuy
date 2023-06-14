@@ -49,7 +49,7 @@
                     <a class="btn btn-primary" href="{{ route('peminjam.edit',$peminjams->nim) }}">Edit</a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" onclick="return confirm('Are you sure you want to delete {{$peminjams->nama_peminjam}}?')"  class="btn btn-danger">Delete</button>
                 </form>
             </td>
         </tr>

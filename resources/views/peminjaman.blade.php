@@ -31,7 +31,7 @@
         <th>Durasi</th>
         <th>Kegiatan</th>
         <th>Status</th>
-        <th width="280px">Action</th>
+        <th width="140px">Action</th>
     </tr>
     @foreach ($peminjaman as $pj)
     <tr>
@@ -46,12 +46,9 @@
         <td>{{ $pj->status }}</td>
         <td>
             <form action="{{ route('peminjaman.destroy',$pj->id_peminjaman) }}" method="POST">
-
                 <a class="btn btn-info" href="{{ route('peminjaman.show',$pj->id_peminjaman) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('peminjaman.edit',$pj->id_peminjaman) }}">Edit</a>
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </td>
     </tr>
