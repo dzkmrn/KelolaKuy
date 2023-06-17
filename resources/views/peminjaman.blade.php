@@ -20,6 +20,7 @@
 </div>
 @endif
 
+<div class="container-fluid">
 <div class="container-md">
 <table class="table table-bordered">
     <tr>
@@ -52,6 +53,7 @@
             </form>
         </td>
     </tr>
+</div>
 </div>
     @endforeach
 </table>

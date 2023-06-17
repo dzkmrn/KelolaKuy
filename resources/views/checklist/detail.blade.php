@@ -11,7 +11,8 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><b>ID Checklist: </b>{{$checklist->id_checklist}}</li>
                     <li class="list-group-item"><b>NIM Peminjam: </b>{{$checklist->peminjaman->peminjam_nim}}</li>
-                    <li class="list-group-item"><b>Tanggal pengembalian: </b>{{$checklist->tanggal_pengembalian}}</li>
+                    <li class="list-group-item"><b>Tanggal Peminjaman: </b>{{$checklist->peminjaman->tanggal_peminjaman}}</li>
+                    <li class="list-group-item"><b>Tanggal Pengembalian: </b>{{$checklist->tanggal_pengembalian}}</li>
                     <li class="list-group-item"><b>Kondisi: </b>{{$checklist->kondisi}}</li>
                 </ul>
             </div>

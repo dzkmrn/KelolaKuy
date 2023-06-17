@@ -5,13 +5,14 @@
 @extends('layout.main')
 
 @section('isi')
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <form class="form-left my-2" method="get" action="{{ route('search') }}">
             <div class="form-group w-70 mb-3">
                 <input type="text" name="search" class="form-control w-50 d-inline" id="search" placeholder="Masukkan Nama">
                 <button type="submit" class="btn btn-primary mb-1">Cari</button>
-                <a class="btn btn-success right" href="{{ route('peminjam.create') }}" style="margin-left:9.6cm">Input Peminjam</a>
+                <a class="btn btn-success right" href="{{ route('peminjam.create') }}" style="margin-left:32.8%">Input Peminjam</a>
             </div>
         </form>
     </div>
@@ -53,6 +54,7 @@
                 </form>
             </td>
         </tr>
+</div>
 </div>
 @endforeach
 </table>

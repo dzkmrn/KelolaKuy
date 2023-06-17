@@ -5,13 +5,14 @@
 @extends('layout.main')
 
 @section('isi')
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <form class="form-left my-2" method="get" action="{{ route('searchJenis') }}">
-            <div class="form-group w-70 mb-3">
+            <div class="container-fluid">
                 <input type="text" name="search" class="form-control w-50 d-inline" id="search" placeholder="Masukkan Jenis">
                 <button type="submit" class="btn btn-primary mb-1">Cari</button>
-                <a class="btn btn-success right" href="{{ route('jenis.create') }}" style="margin-left:9.6cm">Input Jenis</a>
+                <a class="btn btn-success right" href="{{ route('jenis.create') }}" style="margin-left:36.4%">Input Jenis</a>
             </div>
         </form>
     </div>
@@ -54,6 +55,7 @@
             </form>
         </td>
     </tr>
+</div>
 </div>
     @endforeach
 </table>

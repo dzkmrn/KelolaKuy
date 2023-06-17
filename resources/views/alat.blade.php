@@ -5,14 +5,17 @@
 @extends('layout.main')
 
 @section('isi')
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12 margin-tb">
+    <div class="container-fluid">
         <form class="form-left my-2" method="get" action="{{ route('searchAlat') }}">
             <div class="form-group w-70 mb-3">
                 <input type="text" name="search" class="form-control w-50 d-inline" id="search" placeholder="Masukkan Nama">
                 <button type="submit" class="btn btn-primary mb-1">Cari</button>
-                <a class="btn btn-success right" href="{{ route('alat.create') }}" style="margin-left:9.6cm">Input Alat</a>
+                <a class="btn btn-success right" href="{{ route('alat.create') }}" style="margin-left:36.8%">Input Alat</a>
             </div>
+    </div>
         </form>
     </div>
 </div>
@@ -59,5 +62,6 @@
 </div>
     @endforeach
 </table>
+</div>
 {!! $alat ->withQueryString()->links('pagination::bootstrap-5') !!}
 @endsection

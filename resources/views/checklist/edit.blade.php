@@ -24,10 +24,6 @@
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="id_checklist">ID checklist</label>
-                        <input type="id_checklist" name="id_checklist" class="form-control" id="id_checklist" value="{{ $checklist->id_checklist }}" ariadescribedby="id_checklist">
-                    </div>
-                    <div class="form-group">
                         <label for="peminjaman">NIM Peminjam</label>
                         <select name="peminjaman" class="form-control">
                             @foreach ($peminjaman as $Peminjaman)
