@@ -27,7 +27,7 @@
                         <label for="kategori">ID Kategori</label>
                         <select name="kategori" class="form-control">
                             @foreach ($kategori as $Kategori)
-                            <option value="{{$Kategori->id_kategori}}">{{$Kategori->kategori_alat}}</option>
+                            <option value="{{$Kategori->id_kategori}}" {{$alat->kategori->id_kategori == $Kategori->id_kategori ? 'selected' :''}}>{{$Kategori->kategori_alat}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -35,7 +35,7 @@
                         <label for="jenis">ID Jenis</label>
                         <select name="jenis" class="form-control">
                             @foreach ($jenis as $Jenis)
-                            <option value="{{$Jenis->id_jenis}}">{{$Jenis->jenis_alat}}</option>
+                            <option value="{{$Jenis->id_jenis}}" {{$alat->jenis->id_jenis == $Jenis->id_jenis ? 'selected' :''}}>{{$Jenis->jenis_alat}}</option>
                             @endforeach
                         </select>
                     </div>

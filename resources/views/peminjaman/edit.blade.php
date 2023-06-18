@@ -27,7 +27,7 @@
                         <label for="peminjam">Nama Peminjam</label>
                         <select name="peminjam" class="form-control">
                             @foreach ($peminjam as $Peminjam)
-                            <option value="{{$Peminjam->nim}}">{{$Peminjam->nama_peminjam}}</option>
+                            <option value="{{$Peminjam->nim}}" {{$peminjaman->peminjam->nim == $Peminjam->nim ? 'selected' :''}}>{{$Peminjam->nama_peminjam}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -35,7 +35,7 @@
                         <label for="alat">Nama Alat</label>
                         <select name="alat" class="form-control">
                             @foreach ($alat as $Alat)
-                            <option value="{{$Alat->id_alat}}">{{$Alat->nama_alat}}</option>
+                            <option value="{{$Alat->id_alat}}" {{$peminjaman->alat->id_alat == $Alat->id_alat ? 'selected' :''}}>{{$Alat->nama_alat}}</option>
                             @endforeach
                         </select>
                     </div>

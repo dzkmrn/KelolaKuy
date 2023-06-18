@@ -29,7 +29,7 @@
         <table class="table table-bordered">
             <tr>
                 <th>ID checklist</th>
-                <th>ID Peminjam</th>
+                <th>NIM Peminjam</th>
                 <th>Tanggal Peminjaman</th>
                 <th>Tanggal Pengembalian</th>
                 <th>Kondisi</th>
@@ -46,8 +46,8 @@
                 <td>
                     <form action="{{ route('checklist.destroy',$ch->id_checklist) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('checklist.show',$ch->id_checklist) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('checklist.edit',$ch->id_checklist) }}">Edit</a>
+                        <a class="btn btn-info" href="{{ route('checklist.show',$ch->id_checklist) }}"><i class='fa fa-eye' style="color:snow"></i></a>
+                        <a class="btn btn-primary" href="{{ route('checklist.edit',$ch->id_checklist) }}"><i class='fas fa-edit'></i></a>
                         @csrf
                     </form>
                 </td>

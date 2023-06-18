@@ -187,4 +187,11 @@ class PeminjamanController extends Controller
         Peminjaman::find($id_peminjaman)->delete();
         return redirect()->route('peminjaman.index')->with('success', 'peminjaman Berhasil Dihapus');
     } 
+
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $peminjaman = Peminjaman::where('status', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('peminjaman', compact('peminjaman'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }

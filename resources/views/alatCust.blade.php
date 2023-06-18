@@ -13,6 +13,18 @@
 @endif
 
 <div class="container-md">
+<div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="container-fluid">
+                <form class="form-left my-2" method="get" action="{{ route('searchCust') }}">
+                    <div class="form-group w-50">
+                        <input type="text" name="search" class="form-control w-50 d-inline" id="search" placeholder="Masukkan Nama Alat">
+                        <button type="submit" class="btn btn-primary mb-1"><i class='fa fa-search'></i></button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
 <table class="table table-bordered">
     <tr>
         <th>ID Alat</th>

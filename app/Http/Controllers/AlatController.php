@@ -27,6 +27,13 @@ class AlatController extends Controller
         return view('alatCust', compact('alat'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function searchCust(Request $request)
+    {
+        $keyword = $request->search;
+        $alat = Alat::where('nama_alat', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('alatCust', compact('alat'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -181,4 +188,5 @@ class AlatController extends Controller
         $alat = Alat::where('nama_alat', 'like', "%" . $keyword . "%")->paginate(5);
         return view('alat', compact('alat'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
 }

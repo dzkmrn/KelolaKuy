@@ -27,7 +27,7 @@
                         <label for="peminjaman">NIM Peminjam</label>
                         <select name="peminjaman" class="form-control">
                             @foreach ($peminjaman as $Peminjaman)
-                            <option value="{{$Peminjaman->id_peminjaman}}">{{$Peminjaman->peminjam_nim}}</option>
+                            <option value="{{$Peminjaman->id_peminjaman}}" {{$checklist->peminjaman->peminjam->nim == $Peminjaman->peminjam->nim ? 'selected' :''}}>{{$Peminjaman->peminjam_nim}}</option>
                             @endforeach
                         </select>
                     </div>

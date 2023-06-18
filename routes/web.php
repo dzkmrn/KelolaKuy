@@ -62,11 +62,13 @@ Route::resource('alat', AlatController::class);
 Route::get('/searchAlat', [AlatController::class, 'search'])->name('searchAlat');
 
 Route::resource('peminjaman', PeminjamanController::class);
+Route::get('/searchPeminjaman', [PeminjamanController::class, 'search'])->name('searchPeminjaman');
 
 Route::resource('checklist', ChecklistController::class);
 Route::get('cetak', [ChecklistController::class, 'cetak'])->name('cetak');
 
 Route::get('alatCust', [AlatController::class, 'indexCust'])->name('alatCust');
+Route::get('/searchCust', [AlatController::class, 'searchCust'])->name('searchCust');
 
 Route::resource('tracking', CustController::class);
 Route::get('/searchTracking', [CustController::class, 'tracking']);

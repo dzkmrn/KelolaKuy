@@ -5,14 +5,17 @@
 @extends('layout.main')
 
 @section('isi')
-<!-- UPDATE - PEMINJAMAN BLADE -->
-<!-- <div class="row">
+<div class="container-fluid">
+<div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="float-right my-2">
-            <a class="btn btn-success" href="{{ route('peminjaman.create') }}"> Input Peminjaman</a>
-        </div>
+        <form class="form-left my-2" method="get" action="{{ route('searchPeminjaman') }}">
+            <div class="form-group w-70 mb-3">
+                <input type="text" name="search" class="form-control w-50 d-inline" id="search" placeholder="Masukkan Status">
+                <button type="submit" class="btn btn-primary mb-1"><i class='fa fa-search'></i></button>
+            </div>
+        </form>
     </div>
-</div> -->
+</div>
 
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
@@ -47,8 +50,8 @@
         <td>{{ $pj->status }}</td>
         <td>
             <form action="{{ route('peminjaman.destroy',$pj->id_peminjaman) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('peminjaman.show',$pj->id_peminjaman) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('peminjaman.edit',$pj->id_peminjaman) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('peminjaman.show',$pj->id_peminjaman) }}"><i class='fa fa-eye' style="color:snow"></i></a>
+                <a class="btn btn-primary" href="{{ route('peminjaman.edit',$pj->id_peminjaman) }}"><i class='fas fa-edit'></i></a>
                 @csrf
             </form>
         </td>
