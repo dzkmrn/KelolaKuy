@@ -7,7 +7,7 @@
 @section('isi')
 <div class="row justify-content-center">
     <div class="col-8">
-        <table class="table table-borderless table responsive"">
+        <table class="table table-borderless table responsive">
             <tr>
                 <form class="form-left my-2" method="get" action="{{ route('tracking') }}">
                     <td>
