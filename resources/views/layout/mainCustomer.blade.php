@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>KelolaKuy</title>
 
 
@@ -13,6 +14,9 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="icon" href="{{ url('../../dist/img/k_logo_big.png') }}">
+  
+  
 </head>
 
 <body class="hold-transition sidebar-mini">
