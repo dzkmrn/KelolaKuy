@@ -25,8 +25,10 @@
             </form>
         </div>
     </div>
-<table class="table table-bordered">
-    <tr>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap thead-dark">
+            <thead>    
+                <tr>
         <th>ID Alat</th>
         <th>Kategori</th>
         <th>Jenis</th>
@@ -48,5 +50,7 @@
     </tr>
 </div>
     @endforeach
+</thead>
 </table>
+</div>
 @endsection

@@ -2,6 +2,8 @@
 
 @extends('layout.main')
 
+@section('title', 'Dasbor | Admin')
+
 @section('isi')
 
 <!-- Preloader KelolaKuy! -->

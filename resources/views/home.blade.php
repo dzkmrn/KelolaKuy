@@ -1,4 +1,8 @@
+@extends('layout.app')
+
 @extends('layout.mainCustomer')
+
+@section('title', 'Dasbor | Pengguna')
 
 @section('isi')
 <!-- Preloader KelolaKuy! -->

@@ -1,4 +1,8 @@
+@extends('layout.app')
+
 @extends('layout.mainCustomer')
+
+@section('title', 'Isi Form')
 
 @section('isi')
 <div class="container mt-5">

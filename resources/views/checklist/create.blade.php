@@ -1,4 +1,8 @@
+@extends('layout.app')
+
 @extends('layout.main')
+
+@section('title', 'Checklist Alat')
 
 @section('isi')
 <div class="container mt-5">

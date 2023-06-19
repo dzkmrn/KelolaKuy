@@ -1,4 +1,8 @@
+@extends('layout.app')
+
 @extends('layout.main')
+
+@section('title', 'Masukkan Peminjaman')
 
 @section('isi')
 <div class="container mt-5">

@@ -26,41 +26,43 @@
     </div>
     @endif
 
-    <div class="container-md">
-        <table class="table table-bordered">
-            <tr>
-                <th>ID Alat</th>
-                <th>Kategori</th>
-                <th>Jenis</th>
-                <th>Nama Alat</th>
-                <th>Foto Alat</th>
-                <th>Merk Alat</th>
-                <th>Kondisi Alat</th>
-                <th width="280px">Action</th>
-            </tr>
-            @foreach ($alat as $alats)
-            <tr>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap thead-dark">
+            <thead>
+                <tr>
+                    <th>ID Alat</th>
+                    <th>Kategori</th>
+                    <th>Jenis</th>
+                    <th>Nama Alat</th>
+                    <th>Foto Alat</th>
+                    <th>Merk Alat</th>
+                    <th>Kondisi Alat</th>
+                    <th width="280px">Action</th>
+                </tr>
+                @foreach ($alat as $alats)
+                <tr>
 
-                <td>{{ $alats->id_alat }}</td>
-                <td>{{ $alats->kategori->kategori_alat }}</td>
-                <td>{{ $alats->jenis->jenis_alat }}</td>
-                <td>{{ $alats->nama_alat }}</td>
-                <td><img width="100px" src="{{asset('storage/'.$alats->foto_alat)}}"></td>
-                <td>{{ $alats->merk_alat }}</td>
-                <td>{{ $alats->kondisi_alat }}</td>
-                <td>
-                    <form action="{{ route('alat.destroy',$alats->id_alat) }}" method="POST">
+                    <td>{{ $alats->id_alat }}</td>
+                    <td>{{ $alats->kategori->kategori_alat }}</td>
+                    <td>{{ $alats->jenis->jenis_alat }}</td>
+                    <td>{{ $alats->nama_alat }}</td>
+                    <td><img width="100px" src="{{asset('storage/'.$alats->foto_alat)}}"></td>
+                    <td>{{ $alats->merk_alat }}</td>
+                    <td>{{ $alats->kondisi_alat }}</td>
+                    <td>
+                        <form action="{{ route('alat.destroy',$alats->id_alat) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('alat.show',$alats->id_alat) }}"><i class='fa fa-eye' style="color:snow"></i></a>
-                        <a class="btn btn-primary" href="{{ route('alat.edit',$alats->id_alat) }}"><i class='fas fa-edit'></i></a>
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" onclick="return confirm('Are you sure you want to delete {{$alats->kategori_alat}}?')" class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
-                    </form>
-                </td>
-            </tr>
+                            <a class="btn btn-info" href="{{ route('alat.show',$alats->id_alat) }}"><i class='fa fa-eye' style="color:snow"></i></a>
+                            <a class="btn btn-primary" href="{{ route('alat.edit',$alats->id_alat) }}"><i class='fas fa-edit'></i></a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete {{$alats->kategori_alat}}?')" class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
+                        </form>
+                    </td>
+                </tr>
     </div>
     @endforeach
+    </thead>
     </table>
 </div>
 {!! $alat ->withQueryString()->links('pagination::bootstrap-5') !!}

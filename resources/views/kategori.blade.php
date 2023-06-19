@@ -26,36 +26,38 @@
     </div>
     @endif
 
-    <div class="container-md">
-        <table class="table table-bordered">
-            <tr>
-                <th>ID</th>
-                <th>KATEGORI ALAT</th>
-                <th>FOTO</th>
-                <th>DESKRIPSI ALAT</th>
-                <th width="280px">Action</th>
-            </tr>
-            @foreach ($kategori as $kategoris)
-            <tr>
+    <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap thead-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>KATEGORI ALAT</th>
+                    <th>FOTO</th>
+                    <th>DESKRIPSI ALAT</th>
+                    <th width="280px">Action</th>
+                </tr>
+                @foreach ($kategori as $kategoris)
+                <tr>
 
-                <td>{{ $kategoris->id_kategori }}</td>
-                <td>{{ $kategoris->kategori_alat }}</td>
-                <td><img width="100px" src="{{asset('storage/'.$kategoris->foto)}}"></td>
-                <td>{{ $kategoris->dekskripsi_kategori }}</td>
-                <td>
-                    <form action="{{ route('kategori.destroy',$kategoris->id_kategori) }}" method="POST">
+                    <td>{{ $kategoris->id_kategori }}</td>
+                    <td>{{ $kategoris->kategori_alat }}</td>
+                    <td><img width="100px" src="{{asset('storage/'.$kategoris->foto)}}"></td>
+                    <td>{{ $kategoris->dekskripsi_kategori }}</td>
+                    <td>
+                        <form action="{{ route('kategori.destroy',$kategoris->id_kategori) }}" method="POST">
 
-                        <a class="btn btn-info" href="{{ route('kategori.show',$kategoris->id_kategori) }}"><i class='fa fa-eye' style="color:snow"></i></a>
-                        <a class="btn btn-primary" href="{{ route('kategori.edit',$kategoris->id_kategori) }}"><i class='fas fa-edit'></i></a>
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" onclick="return confirm('Are you sure you want to delete {{$kategoris->kategori_alat}}?')" class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
-                        <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                    </form>
-                </td>
-            </tr>
+                            <a class="btn btn-info" href="{{ route('kategori.show',$kategoris->id_kategori) }}"><i class='fa fa-eye' style="color:snow"></i></a>
+                            <a class="btn btn-primary" href="{{ route('kategori.edit',$kategoris->id_kategori) }}"><i class='fas fa-edit'></i></a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete {{$kategoris->kategori_alat}}?')" class="btn btn-danger"><i class='far fa-trash-alt'></i></button>
+                            <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
+                        </form>
+                    </td>
+                </tr>
     </div>
     @endforeach
+    </thead>
     </table>
 </div>
 

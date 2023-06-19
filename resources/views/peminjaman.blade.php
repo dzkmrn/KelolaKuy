@@ -23,9 +23,9 @@
 </div>
 @endif
 
-<div class="container-fluid">
-<div class="container-md">
-<table class="table table-bordered">
+<div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap thead-dark">
+            <thead>
     <tr>
         <th>ID Peminjaman</th>
         <th>Nama Peminjam</th>
@@ -57,8 +57,9 @@
         </td>
     </tr>
 </div>
-</div>
     @endforeach
+</thead>
 </table>
+</div>
 {!! $peminjaman ->withQueryString()->links('pagination::bootstrap-5') !!}
 @endsection
