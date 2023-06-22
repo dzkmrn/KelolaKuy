@@ -35,20 +35,20 @@
                     <div class="form-group">
                         <label for="jenis_kelamin">JENIS KELAMIN</label>
                         <select name="jenis_kelamin" class="form-control form-select-sm" id="jenis_kelamin" aria-describedby="jenis_kelamin">
-                            <option value="Perempuan">Perempuan</option>
-                            <option value="Laki Laki">Laki Laki</option> 
+                            <option value="Perempuan" {{ $peminjam->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                            <option value="Laki Laki" {{ $peminjam->jenis_kelamin == 'Laki Laki' ? 'selected' : '' }}>Laki Laki</option> 
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="prodi">PRODI</label>
                         <select name="prodi" class="form-control form-select-sm" id="prodi" aria-describedby="prodi">
-                            <option value="Teknologi Informasi">Teknologi Informasi</option>
-                            <option value="Teknik Elektro">Teknik Elektro</option> 
-                            <option value="Teknik Kimia">Teknik Kimia</option>
-                            <option value="Teknik Mesin">Teknik Mesin</option>
-                            <option value="Teknik Sipil">Teknik Sipil</option> 
-                            <option value="Akuntansi">Akuntansi</option>
-                            <option value="Akuntansi">Administrasi Niaga</option>
+                            <option value="Teknologi Informasi" {{ $peminjam->prodi == 'Teknologi Informasi' ? 'selected' : '' }}>Teknologi Informasi</option>
+                            <option value="Teknik Elektro" {{ $peminjam->prodi == 'Teknik Elektro' ? 'selected' : '' }}>Teknik Elektro</option> 
+                            <option value="Teknik Kimia" {{ $peminjam->prodi == 'Teknik Kimia' ? 'selected' : '' }}>Teknik Kimia</option>
+                            <option value="Teknik Mesin" {{ $peminjam->prodi == 'Teknik Mesin' ? 'selected' : '' }}>Teknik Mesin</option>
+                            <option value="Teknik Sipil" {{ $peminjam->prodi == 'Teknik Sipil' ? 'selected' : '' }}>Teknik Sipil</option> 
+                            <option value="Akuntansi" {{ $peminjam->prodi == 'Akuntansi' ? 'selected' : '' }}>Akuntansi</option>
+                            <option value="Administrasi Niaga" {{ $peminjam->prodi == 'Administrasi Niaga' ? 'selected' : '' }}>Administrasi Niaga</option>
                         </select>
                     </div>
                     <div class="form-group">

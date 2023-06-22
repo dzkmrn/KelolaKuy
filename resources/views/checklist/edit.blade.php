@@ -38,6 +38,7 @@
                     <div class="form-group">
                         <label for="tanggal_pengembalian">Tanggal Pengembalian</label>
                         <input type="date" name="tanggal_pengembalian" class="form-control" id="tanggal_pengembalian" value="{{ $checklist->tanggal_pengembalian }}" ariadescribedby="tanggal_pengembalian">
+                        <input type="hidden" name="id_checklist" class="form-control" id="id_checklist" value="{{ $checklist->id_checklist }}" ariadescribedby="id_checklist">  
                     </div>
                     <div class="form-group">
                         <label for="kondisi">kondisi</label>
